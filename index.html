@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro-Quiz App</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <!--Title Screen-->
+    <div class="screen" id="titleScreen">
+        <div class="titleSelection" id="takeQuiz">
+            <h2>Take a Quiz</h2> <br>
+            Take an available quiz
+        </div>
+        <div class="titleSelection" id="createQuiz">
+            <h2>Create a Quiz</h2> <br>
+            Create or import a new quiz
+        </div>
+    </div>
+    <!--Quiz Screen-->
+    <div class="screen" id="quizScreen" style="display: none;">
+        <h1>Take a Quiz</h1>
+        <hr>
+        <div id="quizSelection">
+            <div class="quizOption" id="defaultQuiz">
+                Fun Fact Quiz
+                <button class="startQuizButton">Start</button>
+            </div>
+        </div>
+        <button onclick="returnToTitleScreen();">Return</button>
+    </div>
+    <!--Testing Screen-->
+    <div class="screen" id="testingScreen" style="display: none;">
+        <div class="testingPad" id="questionPad">
+            <h2 id="questionNumber">1</h2>
+            <hr>
+            <h2 id="questionName"></h2>
+            <div id="answerPad">
+                <div class="answer" id="answer1"></div>
+                <div class="answer" id="answer2"></div>
+                <div class="answer" id="answer3"></div>
+                <div class="answer" id="Answer4"></div>
+            </div>
+            <button id="nextButton">Next</button>
+        </div>
+        <div class="testingPad" id="scorePad" style="display: none;">
+            <h1>Your Score Was</h1>
+            <div id="scoreNumber"></div>
+            <button onclick="returnToTitleScreen();">Return</button>
+        </div>
+    </div>
+
+    <!--CREATOR SCREEN-->
+
+    <div class="screen" id="creatorScreen" style="display: none;">
+        <h1>Create or Import a Quiz</h1>
+        <hr>
+        <div class="creatorInfoPad">
+            To create or import a test using the Pro-Quiz App import algorithm, type or paste a properly
+            formatted quiz in the quiz console (if the algorithm is sucessful in adding your quiz, it will return a success message).
+            To create a quiz, use property flags to assign properties to each quiz. Property flags and their usage are listed below: <br> <br>
+
+            g <br> <br>
+
+            Example quiz: <br> <br>
+
+            !(ID)testId&(ID) <br>
+            !(T)Title&(T) <br>
+            !(Q)What is the question number?&(Q) <br>
+            !(A)2&(A, W) <br>
+            !(A)6&(A, W) <br>
+            !(A)1&(A, R) <br>
+            !(A)3&(A, W) <br>
+
+        </div>
+        <textarea id="quizInputConsole" style="margin: 10px; width: 500px; height: 200px; resize: none;" placeholder="Type or paste your quiz material here"></textarea>
+        <div id="createQuizOutput"></div>
+        <button onclick="createQuiz()">Append!</button> <br>
+        <button onclick="returnToTitleScreen();">Return</button>
+    </div>
+
+    <!--JS-->
+
+    <script src="scripting.js"></script>
+
+</body>
+</html>
